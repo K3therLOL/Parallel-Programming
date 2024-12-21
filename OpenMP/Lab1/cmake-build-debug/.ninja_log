@@ -1,0 +1,23 @@
+# ninja log v6
+8	180	7523403393547748	CMakeFiles/Lab1.dir/src/main.c.obj	86d3b4c392413a1f
+313	515	7523400593640756	CMakeFiles/Lab1.dir/src/OMPcheck.c.obj	881b9daac01bff01
+8	350	7523403190110906	CMakeFiles/Lab1.dir/src/time_max.c.obj	5d3f3dd74573288b
+329	486	7523400593802367	CMakeFiles/Lab1.dir/src/randomaizer.c.obj	96d104f9e0f0eeee
+46	395	7523512428437014	libmax.dll.a	f4f4896d671436b1
+35	491	7523508503293916	CMakeFiles/Lab1.dir/src/max.c.obj	8359cc05d8880e12
+395	549	7523512428546955	Lab1.exe	4ecb20aa3708eeb8
+4	598	7523708868259626	build.ninja	7c8b2de70e895ee3
+28	449	7523508503223064	CMakeFiles/max.dir/src/max.c.obj	d1c5877964d1c882
+33	234	7523400918929733	CMakeFiles/max.dir/src/randomaizer.c.obj	aca4f6d67ff174c5
+46	395	7523512428437014	D:/ClionProjects/Lab4/lib/libmax.dll	f4f4896d671436b1
+450	1282	7523508515636212	D:/ClionProjects/Lab1/lib/libmax.dll.a	ab117781c99cb308
+38	389	7523709025707409	CMakeFiles/Lab1.dir/src/main.c.obj	86d3b4c392413a1f
+44	460	7523709025757341	CMakeFiles/Lab1.dir/src/OMPcheck.c.obj	881b9daac01bff01
+460	831	7523709029918211	CMakeFiles/Lab1.dir/src/randomaizer.c.obj	96d104f9e0f0eeee
+26	846	7523709025577339	CMakeFiles/max.dir/src/randomaizer.c.obj	aca4f6d67ff174c5
+831	1045	7523709033636741	CMakeFiles/Lab1.dir/src/time_max.c.obj	5d3f3dd74573288b
+390	1088	7523709029218221	CMakeFiles/Lab1.dir/src/max.c.obj	8359cc05d8880e12
+20	1089	7523709025527401	CMakeFiles/max.dir/src/max.c.obj	d1c5877964d1c882
+1089	1453	7523709039756369	D:/ClionProjects/Lab4/lib/libmax.dll	f4f4896d671436b1
+1089	1453	7523709039756369	libmax.dll.a	f4f4896d671436b1
+1453	1809	7523709039856371	Lab1.exe	4ecb20aa3708eeb8
