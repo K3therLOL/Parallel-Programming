@@ -1,9 +1,0 @@
-# ninja log v6
-10	367	7563068252175857	CMakeFiles/Lab1.dir/main.c.obj	b700d6dccb24a31c
-21	401	7563068252285787	CMakeFiles/Lab1.dir/src/OMPcheck.c.obj	7c249d88f14e6b98
-30	562	7563068252375735	CMakeFiles/Lab1.dir/src/max.c.obj	1c844d7fd60b9cd1
-370	621	7563068255783771	CMakeFiles/Lab1.dir/src/randomaizer.c.obj	8b64126ff089b76c
-401	687	7563068256093595	CMakeFiles/Lab1.dir/src/timeMax.c.obj	e66abea1aaaf5eb8
-687	870	7563068258951962	Lab1.exe	787107ae16aec51e
-12	351	7563068387346231	CMakeFiles/Lab1.dir/src/timeMax.c.obj	e66abea1aaaf5eb8
-352	603	7563068390754302	Lab1.exe	787107ae16aec51e
