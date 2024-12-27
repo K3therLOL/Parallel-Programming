@@ -5,6 +5,6 @@
 #ifndef SHELLSORT_H
 #define SHELLSORT_H
 
-void shellSort(int *array, int size);
+bool shell_sort(int *, int);
 
 #endif //SHELLSORT_H

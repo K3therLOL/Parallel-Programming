@@ -10,6 +10,9 @@ add_executable(Lab6 main.c
         src/randomaizer.c
         include/randomaizer.h
         include/ShellSort.h
-        src/shellSort.c)
+        src/shellSort.c
+        src/timeShellSort.c)
 
 target_link_libraries(Lab6 PUBLIC MPI::MPI_C)
+
+#add_subdirectory(tests)
