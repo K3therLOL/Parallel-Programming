@@ -26,7 +26,8 @@ static int resolution(void)
     return res;
 }
 
-static double time_shell_sort(int *array, int size) {
+static double time_shell_sort(int *array, int size)
+{
     double start, end, res = -1.0;
     int rk;
     MPI_Comm_rank(MPI_COMM_WORLD, &rk);
@@ -53,7 +54,7 @@ bool time_algorithm(void)
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &np);
 
-    const int sz = 300000000;
+    const int sz = 10000000;
     int *arr = NULL;
     if(rank == 0 && (arr = (int *)malloc(sz * sizeof(int))) == NULL) {
         perror("");

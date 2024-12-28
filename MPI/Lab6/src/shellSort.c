@@ -3,6 +3,7 @@
 //
 #include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
 #include <mpi.h>
 #include <stdio.h>
 
@@ -37,7 +38,7 @@ static int *sedgewick_steps(int sz, int *d)
     return steps;
 }
 
-bool sequence_shell_sort(int *array, int size)
+static bool sequence_shell_sort(int *array, int size)
 {
     int d = 1;
     int *steps = sedgewick_steps(size, &d);
@@ -59,6 +60,12 @@ bool sequence_shell_sort(int *array, int size)
     return true;
 }
 
+static int cmp(const void *x, const void *y) {
+    int _x = *(int *)x;
+    int _y = *(int *)y;
+    return (_x > _y) - (_x < _y);
+}
+
 bool shell_sort(int *array, int size)
 {
     int sz, rk;
@@ -66,68 +73,58 @@ bool shell_sort(int *array, int size)
     MPI_Comm_rank(MPI_COMM_WORLD, &rk);
     MPI_Status status;
 
-    //int *sub_array = NULL;
     int elements_per_process = size / sz;
 
-    if (rk == 0) {
-        int i;
-        for (i = 0; i < sz - 1; ++i) {
-            MPI_Send(array + elements_per_process * i,
-                     elements_per_process,
-                     MPI_INT,
-                     i + 1,
-                     0,
-                     MPI_COMM_WORLD);
-        }
-
-        for (i = 0; i < sz - 1; ++i) {
-            MPI_Recv(array + elements_per_process * i,
-                     elements_per_process,
-                     MPI_INT,
-                     i + 1,
-                     1,
-                     MPI_COMM_WORLD,
-                     &status);
-        }
-
-        int elements_remain = size - i * elements_per_process;
-        sequence_shell_sort(array + elements_per_process * i, elements_remain);
-
+    int *sub_array = (int *)malloc(elements_per_process * sizeof(int));
+    if (sub_array == NULL) {
+        return false;
     }
-    else {
 
-        int *sub_array = (int *)malloc(elements_per_process * sizeof(int));
-        if (sub_array == NULL) {
-            return false;
-        }
-
-        MPI_Recv(sub_array,
-                 elements_per_process,
-                 MPI_INT,
-                 0,
-                 MPI_ANY_TAG,
-                 MPI_COMM_WORLD,
-                 &status);
-        printf("Sub array before\n");
-        for (int i = 0; i < elements_per_process; ++i)
-            printf("%d ", sub_array[i]);
-        printf("\n");
-
-        sequence_shell_sort(sub_array, elements_per_process);
-
-        printf("Sub array after\n");
-        for (int i = 0; i < elements_per_process; ++i)
-            printf("%d ", sub_array[i]);
-        printf("\n");
-
-        MPI_Send(sub_array,
+    MPI_Scatter(array,
+                elements_per_process,
+                MPI_INT,
+                sub_array,
                 elements_per_process,
                 MPI_INT,
                 0,
-                1,
                 MPI_COMM_WORLD);
 
-        free(sub_array);
+    sequence_shell_sort(sub_array, elements_per_process);
+
+    int *recvcounts = NULL, *displs = NULL;
+    if (rk == 0) {
+        recvcounts = (int *)malloc(sz * sizeof(int));
+        displs     = (int *)malloc(sz * sizeof(int));
+        if (recvcounts == NULL || displs == NULL) {
+            return false;
+        }
+
+        int i = 0;
+        for (; i < sz - 1; ++i) {
+            recvcounts[i] = elements_per_process;
+            displs[i]     = i * elements_per_process;
+
+        }
+        recvcounts[i] = size - i * elements_per_process;
+        displs[i]     = i * elements_per_process;
     }
+
+    MPI_Gatherv(sub_array,
+                elements_per_process,
+                MPI_INT,
+                array,
+                recvcounts,
+                displs,
+                MPI_INT,
+                0,
+                MPI_COMM_WORLD);
+
+    if (rk == 0) {
+        sequence_shell_sort(array, size);
+    }
+
+    free(recvcounts);
+    free(displs);
+    free(sub_array);
     return true;
 }
