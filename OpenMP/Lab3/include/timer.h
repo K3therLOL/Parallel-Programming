@@ -13,5 +13,4 @@ int get_timer_precision(void);
 
 bool time_algorithm(void);
 
-
 #endif //TIMER_H

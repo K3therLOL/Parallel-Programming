@@ -1,0 +1,1 @@
+/usr/bin/c++ -fopenmp CMakeFiles/Lab3_tests.dir/lab3Tests.cpp.o -o Lab3_tests 

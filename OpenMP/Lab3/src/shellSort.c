@@ -6,14 +6,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void swap(int *x, int *y)
+static void swap(int *x, int *y)
 {
     int t = *x;
     *x = *y;
     *y = t;
 }
 
-void insertion_sort(int *arr, size_t start, size_t sz, size_t step)
+static void insertion_sort(int *arr, size_t start, size_t sz, size_t step)
 {
     for(size_t j = start + step; j < sz; j += step)
     {
@@ -26,39 +26,9 @@ void insertion_sort(int *arr, size_t start, size_t sz, size_t step)
     }
 }
 
-
-#if 0
-void insertion_sort___(int *arr, size_t sz, size_t step)
-{
-    for(size_t j = step; j < sz; j += step)
-    {
-        size_t k = j;
-        while(k > 0 and arr[k - step] > arr[k])
-        {
-            swap(&arr[k - step], &arr[k]);
-            k -= step;
-        }
-    }
-}
-
-void shell_sort_(int *arr, size_t sz, int threads)
-{
-    #pragma omp parallel shared(arr, sz) default(none) num_threads(threads)
-    {
-        for (size_t d = sz / 2; d != 0; d /= 2)
-        {
-            #pragma omp for
-            for(size_t i = 0; i < d; ++i) {
-                insertion_sort(arr, i, sz, d);
-            }
-        }
-    } //#pragma omp parallel
-}
-#endif
-
 #define MAX_STEPS 31
 
-size_t *sedgewick_steps(size_t sz, size_t *d)
+static size_t *sedgewick_steps(size_t sz, size_t *d)
 {
     size_t *steps = (size_t *)calloc(MAX_STEPS, sizeof(size_t));
     if(NULL != steps)
@@ -81,6 +51,10 @@ void shell_sort(int *arr, size_t sz, int threads)
 {
     size_t d = 1;
     size_t *steps = sedgewick_steps(sz, &d); //mallocing memory
+    
+    if(steps == NULL) {
+        return;
+    }
 
     #pragma omp parallel shared(arr, sz, steps, d) default(none) num_threads(threads)
     {
@@ -94,5 +68,5 @@ void shell_sort(int *arr, size_t sz, int threads)
         }
     } //#pragma omp parallel
 
-    free(steps);
+    free(steps); //deallocing memory
 }
