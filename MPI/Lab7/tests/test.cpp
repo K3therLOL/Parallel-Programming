@@ -8,28 +8,43 @@
 
 TEST_CASE("Prime numbers are computed", "[primeNumbers]")
 {
-    int rk;
+    int rk, sz;
     MPI_Comm_rank(MPI_COMM_WORLD, &rk);
+    MPI_Comm_size(MPI_COMM_WORLD, &sz);
 
     FILE *fp = NULL;
     if(rk == 0) {
         fp = fopen("prime_numbers.txt", "r");
     }
 
-    int package_size = 0;
-    int *pk = prime_numbers_package(&package_size, 2, BORDER, 1); 
-   
+    int *array = NULL;
     if(rk == 0) {
-        
-        REQUIRE(package_size == SIZE); 
-    
-        int check = 0;
-        for(int i = 0; i < package_size; ++i) {
-            fscanf(fp, "  %*d => %d,", &check);  
-            REQUIRE(check == pk[i]);
-        }
-
-        fclose(fp);
+        array = (int *)malloc(BORDER * sizeof(int));
     }
 
+    for(int i = 1; i <= sz; ++i)
+    {
+
+        int package_size = 0;
+        array = prime_numbers_package(array, &package_size, 2, BORDER, MPI_COMM_WORLD, i); 
+
+        if(rk == 0) {
+
+            REQUIRE(package_size == SIZE); 
+
+            int check = 0;
+            for(int j = 0; j < package_size; ++j) {
+                fscanf(fp, "  %*d => %d,", &check);  
+                REQUIRE(check == array[j]);
+            }
+
+            fseek(fp, 0, SEEK_SET);
+        }
+
+    }
+    
+    if(rk == 0) {
+        free(array);
+        fclose(fp);
+    }
 }

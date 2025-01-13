@@ -24,8 +24,8 @@ add_executable(Lab7 main.c include/primeNumbers.h src/primeNumbers.c)
 
 target_link_libraries(Lab7 PRIVATE OpenMP::OpenMP_C)
 
-target_link_libraries(Lab7 PUBLIC MPI::MPI_C)
+target_link_libraries(Lab7 PRIVATE MPI::MPI_C)
 
-target_link_libraries(Lab7 PUBLIC m)
+target_link_libraries(Lab7 PRIVATE m)
 
 add_subdirectory(tests)

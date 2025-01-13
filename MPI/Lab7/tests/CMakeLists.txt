@@ -6,6 +6,8 @@ find_package(Catch2 3 REQUIRED)
 
 add_executable(Lab7_tests test-main.cpp test.cpp)
 
+set(CMAKE_CXX_FLAGS "-fopenmp -lm")
+
 target_link_libraries(Lab7_tests PRIVATE OpenMP::OpenMP_CXX)
 
 target_link_libraries(Lab7_tests PRIVATE MPI::MPI_CXX)

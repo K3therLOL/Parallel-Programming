@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
 #include <stdint.h>
 #include <math.h>
 #include <mpi.h>
@@ -56,26 +55,28 @@ static int *find_prime_numbers(int *size, int start, int count, int threads)
 {
     *size = 0;
     
-    int *arr = (int *)malloc(count * sizeof(int));
-    if(arr == NULL) {
+    int *array = (int *)malloc(count * sizeof(int));
+    if(array == NULL) {
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
     }
 
     for(int i = start; i < start + count; ++i) { 
         if(is_prime(i, threads) == true) {
-            arr[*size] = i;
+            array[*size] = i;
             *size += 1;
         }    
     }
 
-    return arr;
+    return array;
 }
 
-int *prime_numbers_package(int *size, int start, int end, int threads)
+#define ROOT 0
+
+int *prime_numbers_package(int *array, int *size, int start, int end, MPI_Comm comm, int omp_threads)
 {
     int sz, rk;
-    MPI_Comm_size(MPI_COMM_WORLD, &sz);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rk);
+    MPI_Comm_size(comm, &sz);
+    MPI_Comm_rank(comm, &rk);
     
     if(start > end) {
         swap(&start, &end);
@@ -83,20 +84,17 @@ int *prime_numbers_package(int *size, int start, int end, int threads)
 
     int num_of_elements = end - start + 1;
     
-    int *array = NULL;
-    if(rk == 0 && (array = (int *)malloc(num_of_elements * sizeof(int))) == NULL) {
-        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-    }
-
     /* MPI starts */
 
     int elements_per_process = num_of_elements / sz;
 
     int data[sz];
     int local_start = start;
-    for(int i = 0; i < sz; ++i) {
-        data[i]      = local_start;
-        local_start += elements_per_process;
+    if(rk == ROOT) {
+        for(int i = 0; i < sz; ++i) {
+            data[i]      = local_start;
+            local_start += elements_per_process;
+        }
     }
 
     MPI_Scatter(data, 
@@ -105,14 +103,13 @@ int *prime_numbers_package(int *size, int start, int end, int threads)
                 &local_start, 
                 1,
                 MPI_INT,
-                0,
-                MPI_COMM_WORLD); 
+                ROOT,
+                comm); 
 
     int local_size = 0;
-    int *sub_array = find_prime_numbers(&local_size, local_start, elements_per_process, threads);
+    int *sub_array = find_prime_numbers(&local_size, local_start, elements_per_process, omp_threads);
 
-    //MPI_Request request;
-    //MPI_Status status;
+    int recvcounts[sz], displs[sz];
 
     MPI_Gather(&local_size,
                1,
@@ -120,11 +117,11 @@ int *prime_numbers_package(int *size, int start, int end, int threads)
                recvcounts,
                1,
                MPI_INT,
-               0,
-               MPI_COMM_WORLD);
+               ROOT,
+               comm);
 
     int offset = 0;
-    if(rk == 0) {
+    if(rk == ROOT) {
     
         for(int i = 0; i < sz; ++i) {
             displs[i] =  offset;
@@ -141,11 +138,10 @@ int *prime_numbers_package(int *size, int start, int end, int threads)
                 recvcounts,
                 displs,
                 MPI_INT,
-                0,
-                MPI_COMM_WORLD);
+                ROOT,
+                comm);
     
-    if(rk == 0) {
-        
+    if(rk == ROOT) {
         int last_portion = num_of_elements % elements_per_process;
         
         if(last_portion == 0) {
@@ -154,10 +150,13 @@ int *prime_numbers_package(int *size, int start, int end, int threads)
             return array;
         }
 
-        int last_size = 0;
-        int *last_part = find_prime_numbers(&last_size, offset, last_portion, threads);
+        int last_start = num_of_elements - last_portion + 1;
+        int last_size  = 0;
+        omp_threads    = 1;
 
-        memcpy(array + offset, last_part, last_size);
+        int *last_part = find_prime_numbers(&last_size, last_start, last_portion + 1, omp_threads);
+
+        memcpy(array + offset, last_part, last_size * sizeof(int));
         offset += last_size;
 
         *size = offset;
@@ -167,19 +166,3 @@ int *prime_numbers_package(int *size, int start, int end, int threads)
     free(sub_array);
     return array;
 }
-
-/*void print_prime_numbers(int start, int end, int threads)
-{
-    int rk;
-    MPI_Comm_rank(MPI_COMM_WORLD, &rk);
-
-    int size = 0;
-    int *array = prime_numbers_package(&size, start, end, threads);
-    if(rk == 0) {
-        printf("\nPrime numbers:\n");
-        for(int i = 0; i < size; ++i)
-            printf("%d\n", array[i]);
-    }
-
-    free(array);
-}*/
