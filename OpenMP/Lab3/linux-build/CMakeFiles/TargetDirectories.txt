@@ -1,0 +1,6 @@
+/home/kether/Programming/Parallel-Programming/OpenMP/Lab3/linux-build/CMakeFiles/Lab3.dir
+/home/kether/Programming/Parallel-Programming/OpenMP/Lab3/linux-build/CMakeFiles/edit_cache.dir
+/home/kether/Programming/Parallel-Programming/OpenMP/Lab3/linux-build/CMakeFiles/rebuild_cache.dir
+/home/kether/Programming/Parallel-Programming/OpenMP/Lab3/linux-build/tests/CMakeFiles/Lab3_tests.dir
+/home/kether/Programming/Parallel-Programming/OpenMP/Lab3/linux-build/tests/CMakeFiles/edit_cache.dir
+/home/kether/Programming/Parallel-Programming/OpenMP/Lab3/linux-build/tests/CMakeFiles/rebuild_cache.dir
