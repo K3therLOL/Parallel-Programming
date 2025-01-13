@@ -1,0 +1,12 @@
+# ninja log v6
+55	952	7568387854594113	CMakeFiles/Lab6.dir/src/randomaizer.c.obj	51fcda020f119eb0
+32	783	7570892289849546	CMakeFiles/Lab6.dir/src/shellSort.c.obj	b7a857b705be0bcf
+99	621	7570849601443138	CMakeFiles/Lab6.dir/main.c.obj	97c52f7c6c7527ae
+63	712	7570892290159366	CMakeFiles/Lab6.dir/src/timeShellSort.c.obj	480ec772af350755
+783	1207	7570892297355241	Lab6.exe	23672bf3b954cf65
+52	469	7570898174154185	CMakeFiles/Lab6.dir/src/randomaizer.c.obj	51fcda020f119eb0
+67	524	7570898174304101	CMakeFiles/Lab6.dir/src/timeShellSort.c.obj	480ec772af350755
+60	629	7570898174244139	CMakeFiles/Lab6.dir/src/shellSort.c.obj	b7a857b705be0bcf
+630	1008	7570898179930867	Lab6.exe	23672bf3b954cf65
+31	619	7570906978058071	CMakeFiles/Lab6.dir/src/timeShellSort.c.obj	480ec772af350755
+620	1007	7570906983950491	Lab6.exe	23672bf3b954cf65

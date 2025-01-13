@@ -1,0 +1,6 @@
+/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/Lab7.dir
+/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/edit_cache.dir
+/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/rebuild_cache.dir
+/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/tests/CMakeFiles/Lab7_tests.dir
+/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/tests/CMakeFiles/edit_cache.dir
+/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/tests/CMakeFiles/rebuild_cache.dir

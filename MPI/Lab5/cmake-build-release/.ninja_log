@@ -1,0 +1,7 @@
+# ninja log v6
+5	371	7563051674550434	CMakeFiles/Lab5.dir/main.c.obj	de64b572e92248f
+17	422	7563051674670337	CMakeFiles/Lab5.dir/src/MPIcheck.c.obj	b07aa7bc38dfa87c
+33	523	7563051674830252	CMakeFiles/Lab5.dir/src/max.c.obj	e5d0a12f7249c2ad
+374	583	7563051678238302	CMakeFiles/Lab5.dir/src/randomaizer.c.obj	7a0662920e05986c
+422	725	7563051678718011	CMakeFiles/Lab5.dir/src/timeMax.c.obj	afc539b462dc846a
+725	914	7563051681746272	Lab5.exe	ce3ad03d9d7eafa6
