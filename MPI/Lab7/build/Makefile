@@ -190,6 +190,30 @@ src/primeNumbers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab7.dir/build.make CMakeFiles/Lab7.dir/src/primeNumbers.c.s
 .PHONY : src/primeNumbers.c.s
 
+src/timeAlgorithm.o: src/timeAlgorithm.c.o
+.PHONY : src/timeAlgorithm.o
+
+# target to build an object file
+src/timeAlgorithm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab7.dir/build.make CMakeFiles/Lab7.dir/src/timeAlgorithm.c.o
+.PHONY : src/timeAlgorithm.c.o
+
+src/timeAlgorithm.i: src/timeAlgorithm.c.i
+.PHONY : src/timeAlgorithm.i
+
+# target to preprocess a source file
+src/timeAlgorithm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab7.dir/build.make CMakeFiles/Lab7.dir/src/timeAlgorithm.c.i
+.PHONY : src/timeAlgorithm.c.i
+
+src/timeAlgorithm.s: src/timeAlgorithm.c.s
+.PHONY : src/timeAlgorithm.s
+
+# target to generate assembly for a file
+src/timeAlgorithm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab7.dir/build.make CMakeFiles/Lab7.dir/src/timeAlgorithm.c.s
+.PHONY : src/timeAlgorithm.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -206,6 +230,9 @@ help:
 	@echo "... src/primeNumbers.o"
 	@echo "... src/primeNumbers.i"
 	@echo "... src/primeNumbers.s"
+	@echo "... src/timeAlgorithm.o"
+	@echo "... src/timeAlgorithm.i"
+	@echo "... src/timeAlgorithm.s"
 .PHONY : help
 
 

@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/Lab5.dir/main.c.o CMakeFiles/Lab5.dir/src/MPIcheck.c.o CMakeFiles/Lab5.dir/src/max.c.o CMakeFiles/Lab5.dir/src/randomaizer.c.o CMakeFiles/Lab5.dir/src/timeMax.c.o -o Lab5  /usr/local/lib/libmpi.so 

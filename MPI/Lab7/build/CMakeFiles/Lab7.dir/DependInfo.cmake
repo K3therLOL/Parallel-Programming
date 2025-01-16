@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/kether/Programming/Parallel-Programming/MPI/Lab7/main.c" "CMakeFiles/Lab7.dir/main.c.o" "gcc" "CMakeFiles/Lab7.dir/main.c.o.d"
   "/home/kether/Programming/Parallel-Programming/MPI/Lab7/src/primeNumbers.c" "CMakeFiles/Lab7.dir/src/primeNumbers.c.o" "gcc" "CMakeFiles/Lab7.dir/src/primeNumbers.c.o.d"
+  "/home/kether/Programming/Parallel-Programming/MPI/Lab7/src/timeAlgorithm.c" "CMakeFiles/Lab7.dir/src/timeAlgorithm.c.o" "gcc" "CMakeFiles/Lab7.dir/src/timeAlgorithm.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

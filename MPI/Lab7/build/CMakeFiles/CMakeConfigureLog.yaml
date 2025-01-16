@@ -1432,3 +1432,312 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-AVjvUW"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-AVjvUW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-AVjvUW'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7deb0/fast
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-AVjvUW'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7deb0.dir/build.make CMakeFiles/cmTC_7deb0.dir/build
+        gmake[2]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-AVjvUW'
+        Building C object CMakeFiles/cmTC_7deb0.dir/test_mpi.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_7deb0.dir/test_mpi.c.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-AVjvUW/test_mpi.c
+        Linking C executable cmTC_7deb0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7deb0.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_7deb0.dir/test_mpi.c.o -o cmTC_7deb0  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-AVjvUW'
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-AVjvUW'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MBSM7T"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MBSM7T"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MBSM7T'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_53ba0/fast
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MBSM7T'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_53ba0.dir/build.make CMakeFiles/cmTC_53ba0.dir/build
+        gmake[2]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MBSM7T'
+        Building CXX object CMakeFiles/cmTC_53ba0.dir/test_mpi.cpp.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_53ba0.dir/test_mpi.cpp.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MBSM7T/test_mpi.cpp
+        Linking CXX executable cmTC_53ba0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53ba0.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_53ba0.dir/test_mpi.cpp.o -o cmTC_53ba0  /usr/local/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MBSM7T'
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MBSM7T'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vHH7fm"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vHH7fm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vHH7fm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_65db0/fast
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vHH7fm'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_65db0.dir/build.make CMakeFiles/cmTC_65db0.dir/build
+        gmake[2]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vHH7fm'
+        Building CXX object CMakeFiles/cmTC_65db0.dir/test_mpi.cpp.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_65db0.dir/test_mpi.cpp.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vHH7fm/test_mpi.cpp
+        Linking CXX executable cmTC_65db0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65db0.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_65db0.dir/test_mpi.cpp.o -o cmTC_65db0  /usr/local/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vHH7fm'
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vHH7fm'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MCw5Ol"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MCw5Ol"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MCw5Ol'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_17885/fast
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MCw5Ol'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_17885.dir/build.make CMakeFiles/cmTC_17885.dir/build
+        gmake[2]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MCw5Ol'
+        Building C object CMakeFiles/cmTC_17885.dir/test_mpi.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_17885.dir/test_mpi.c.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MCw5Ol/test_mpi.c
+        Linking C executable cmTC_17885
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17885.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_17885.dir/test_mpi.c.o -o cmTC_17885  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MCw5Ol'
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-MCw5Ol'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-eK7b0K"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-eK7b0K"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-eK7b0K'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ac1cd/fast
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-eK7b0K'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ac1cd.dir/build.make CMakeFiles/cmTC_ac1cd.dir/build
+        gmake[2]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-eK7b0K'
+        Building CXX object CMakeFiles/cmTC_ac1cd.dir/test_mpi.cpp.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_ac1cd.dir/test_mpi.cpp.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-eK7b0K/test_mpi.cpp
+        Linking CXX executable cmTC_ac1cd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac1cd.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_ac1cd.dir/test_mpi.cpp.o -o cmTC_ac1cd  /usr/local/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-eK7b0K'
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-eK7b0K'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-rfG5Lv"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-rfG5Lv"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-rfG5Lv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_30dbb/fast
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-rfG5Lv'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_30dbb.dir/build.make CMakeFiles/cmTC_30dbb.dir/build
+        gmake[2]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-rfG5Lv'
+        Building CXX object CMakeFiles/cmTC_30dbb.dir/test_mpi.cpp.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_30dbb.dir/test_mpi.cpp.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-rfG5Lv/test_mpi.cpp
+        Linking CXX executable cmTC_30dbb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30dbb.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_30dbb.dir/test_mpi.cpp.o -o cmTC_30dbb  /usr/local/lib/libmpi.so 
+        gmake[2]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-rfG5Lv'
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-rfG5Lv'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vrB7VZ"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vrB7VZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vrB7VZ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d0be2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d0be2.dir/build.make CMakeFiles/cmTC_d0be2.dir/build
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vrB7VZ'
+        Building C object CMakeFiles/cmTC_d0be2.dir/test_mpi.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_d0be2.dir/test_mpi.c.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vrB7VZ/test_mpi.c
+        Linking C executable cmTC_d0be2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0be2.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_d0be2.dir/test_mpi.c.o -o cmTC_d0be2  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-vrB7VZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-ltuoFR"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-ltuoFR"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-ltuoFR'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9a91d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9a91d.dir/build.make CMakeFiles/cmTC_9a91d.dir/build
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-ltuoFR'
+        Building CXX object CMakeFiles/cmTC_9a91d.dir/test_mpi.cpp.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_9a91d.dir/test_mpi.cpp.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-ltuoFR/test_mpi.cpp
+        Linking CXX executable cmTC_9a91d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a91d.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_9a91d.dir/test_mpi.cpp.o -o cmTC_9a91d  /usr/local/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-ltuoFR'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-cLpBBP"
+      binary: "/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-cLpBBP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-cLpBBP'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_31076/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_31076.dir/build.make CMakeFiles/cmTC_31076.dir/build
+        gmake[1]: Entering directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-cLpBBP'
+        Building CXX object CMakeFiles/cmTC_31076.dir/test_mpi.cpp.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_31076.dir/test_mpi.cpp.o -c /home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-cLpBBP/test_mpi.cpp
+        Linking CXX executable cmTC_31076
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31076.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_31076.dir/test_mpi.cpp.o -o cmTC_31076  /usr/local/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/kether/Programming/Parallel-Programming/MPI/Lab7/build/CMakeFiles/CMakeScratch/TryCompile-cLpBBP'
+        
+      exitCode: 0
+...

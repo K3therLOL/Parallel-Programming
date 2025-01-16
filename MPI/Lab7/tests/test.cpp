@@ -8,6 +8,7 @@
 
 TEST_CASE("Prime numbers are computed", "[primeNumbers]")
 {
+    
     int rk, sz;
     MPI_Comm_rank(MPI_COMM_WORLD, &rk);
     MPI_Comm_size(MPI_COMM_WORLD, &sz);
@@ -22,15 +23,22 @@ TEST_CASE("Prime numbers are computed", "[primeNumbers]")
         array = (int *)malloc(BORDER * sizeof(int));
     }
 
+    double r;
+
     for(int i = 1; i <= sz; ++i)
     {
+        if(rk == 0) {
+            r = MPI_Wtime();
+        }
 
         int package_size = 0;
-        array = prime_numbers_package(array, &package_size, 2, BORDER, MPI_COMM_WORLD, i); 
+        prime_numbers_package(array, &package_size, 2, BORDER, MPI_COMM_WORLD, i); 
 
         if(rk == 0) {
-
-            REQUIRE(package_size == SIZE); 
+            r = MPI_Wtime() - r;
+            printf("%d processor time = %f sec\n", i, r);
+           
+           REQUIRE(package_size == SIZE); 
 
             int check = 0;
             for(int j = 0; j < package_size; ++j) {
@@ -39,6 +47,7 @@ TEST_CASE("Prime numbers are computed", "[primeNumbers]")
             }
 
             fseek(fp, 0, SEEK_SET);
+        
         }
 
     }

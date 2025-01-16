@@ -20,7 +20,7 @@ endif()
 
 set(CMAKE_C_FLAGS "-Wall -Wextra -Wpedantic -Werror -fopenmp -lm")
 
-add_executable(Lab7 main.c include/primeNumbers.h src/primeNumbers.c)
+add_executable(Lab7 main.c include/primeNumbers.h src/primeNumbers.c include/timeAlgorithm.h src/timeAlgorithm.c)
 
 target_link_libraries(Lab7 PRIVATE OpenMP::OpenMP_C)
 

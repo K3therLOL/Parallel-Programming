@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lab7.dir/main.c.o.d"
   "CMakeFiles/Lab7.dir/src/primeNumbers.c.o"
   "CMakeFiles/Lab7.dir/src/primeNumbers.c.o.d"
+  "CMakeFiles/Lab7.dir/src/timeAlgorithm.c.o"
+  "CMakeFiles/Lab7.dir/src/timeAlgorithm.c.o.d"
   "Lab7"
   "Lab7.pdb"
 )

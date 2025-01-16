@@ -1,0 +1,3 @@
+/home/kether/Programming/Parallel-Programming/MPI/Lab5/linux-build/CMakeFiles/Lab5.dir
+/home/kether/Programming/Parallel-Programming/MPI/Lab5/linux-build/CMakeFiles/edit_cache.dir
+/home/kether/Programming/Parallel-Programming/MPI/Lab5/linux-build/CMakeFiles/rebuild_cache.dir
